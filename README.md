@@ -9,34 +9,34 @@
 </div>
 
 ---
-### I - Linux Fundamentals
+# I - Linux Fundamentals
 - Les utilisateurs et les droits
 - Installer des programmes avec apt-get
 - Surveiller l'activité du système
 - Exécuter des programmes en arrière-plan
 - La connexion sécurisée à distance avec SSH
 - Analyser le réseau et filtrer le trafic avec un pare-feu
-### II - Network Fundamentals
-#### OSI Model
+## II - Network Fundamentals
+### OSI Model
 - .1. Couche 1 et 2 : communiquer dans un réseau local (LAN)
 - .2. Couche 3 : communiquer entre réseaux
 - .3. Couche 4 : communiquer entre applications
 - .4. Couche 7 : Applications 
 - .5. protocoles DHCP, DNS, et HTTP
-### III - Offensive Pentesting
-#### Attaques
-#### Etapes
-#### .1. Footprinting and Reconnaissance
-#### .2. Scanning Networks
+## III - Offensive Pentesting
+### Attaques
+### Etapes
+### .1. Footprinting and Reconnaissance
+### .2. Scanning Networks
 - Ma machine
 - Scanning
 - Enumeration
 - Vulnerability Analysis
-#### .3. System Hacking
+### .3. System Hacking
 - Sniffing : Wireshark / Tcpdump
 - Hacking Wireless Networks : Attaques MiTM
 - Malware Threats, Denial-of-Service, Session Hijacking, SQL injection ..
-### IV - Hack the Box
+## IV - Hack the Box
 - Installation
 - Methodo
 
@@ -44,7 +44,7 @@
 
 # I - Linux Fundamentals
 - [cours openclassroom](https://openclassrooms.com/fr/courses/43538-reprenez-le-controle-a-laide-de-linux/38351-la-structure-des-dossiers-et-fichiers)
-### Les utilisateurs et les droits
+## Les utilisateurs et les droits
 Linux est un système multi-utilisateurs = plusieurs personnes peuvent travailler simultanément sur le même OS, en s'y connectant à distance notamment
 
 - **Root** : Il y a un utilisateur « spécial », root, aussi appelé superutilisateur. Celui-ci a tous les droits sur la machine, et que lui a acces a certaines commandes.
@@ -64,7 +64,7 @@ Linux est un système multi-utilisateurs = plusieurs personnes peuvent travaille
 | chown *nom du nouveau proprio* *nom du fichier* | changer le propriétaire d'un fichier (idem en root)|
 | chmod *chiffre* *fichier* | Modifier les droits d'accès (voir readme minishell) |
 
-### Installer des programmes avec apt-get
+## Installer des programmes avec apt-get
 Sous Windows, les programmes sont éparpillés aux quatre coins du Net.
 Sous Linux, on a choisi de placer tous les programmes (paquets) au même endroit.L'installation de programmes fonctionne différemment d'une distribution à une autre.
 
@@ -80,7 +80,7 @@ Sous Linux, on a choisi de placer tous les programmes (paquets) au même endroit
 - apt-cache search monpaquet (optionnel) : pour rechercher le paquet que nous voulons télécharger si nous ne connaissons pas son nom exact ;
 - **apt-get install** monpaquet : pour télécharger et installer notre paquet.
 
-### Surveiller l'activité du système
+## Surveiller l'activité du système
 Linux est un système multi-tâches et multi-utilisateurs : il est capable de gérer plusieurs programmes tournant en même temps + plusieurs personnes peuvent utiliser la même machine en même temps (en s'y connectant via Internet).
 
 Série de commandes qui nous permettront de savoir ce qui se passe actuellement dans notre ordinateur :
@@ -97,7 +97,7 @@ Série de commandes qui nous permettront de savoir ce qui se passe actuellement 
 |sudo reboot| redemarrer l'ordinateur|
 
 
-### Exécuter des programmes en arrière-plan
+## Exécuter des programmes en arrière-plan
 Plusieurs programmes peuvent tourner en même temps au sein d'une même console. 
 
 | commande | fonctionnement |
@@ -108,7 +108,7 @@ Plusieurs programmes peuvent tourner en même temps au sein d'une même console.
 | jobs | connaître les processus qui tournent en arrière-plan|
 |fg | reprendre un processus au premier plan|
 
-### La connexion sécurisée à distance avec SSH
+## La connexion sécurisée à distance avec SSH
 
 Toutes les machines sous Linux peuvent être configurées pour que l'on s'y connecte à distance, pour peu qu'elles restent allumées.
 
@@ -132,9 +132,9 @@ ssh *login*@*adresseipdemonordi* #verifier que le port 22 n'est pas bloque par u
 # on va nous demander notre mot de passe
 ```
 
-### Analyser le réseau et filtrer le trafic avec un pare-feu
+## Analyser le réseau et filtrer le trafic avec un pare-feu
 
-#### 1. Lorsque vous êtes connectés à l'internet, vous avez régulièrement des applications qui vont se connecter puis télécharger et envoyer des informations. Comment surveiller ce qui se passe ? Quelle application est en train de communiquer et sur quel port ?
+### 1. Lorsque vous êtes connectés à l'internet, vous avez régulièrement des applications qui vont se connecter puis télécharger et envoyer des informations. Comment surveiller ce qui se passe ? Quelle application est en train de communiquer et sur quel port ?
 
 
 Chaque IP est associee a un hostname (= nom en toutes lettres plus facile à mémoriser et qui revient exactement au même que d'écrire l'adresse IP). L'association des 2 est faite par les serveurs DNS. Si je tappe siteduzero.com dans mon navigateur je tombe sur openclassroom, plus facile que de retenir l'adresse ip.
@@ -177,7 +177,7 @@ Sur mac :
 - regarder les ports sur lesquels ces connexions ecoutent (après le symbole « : » dans colonne "adresse locale") : on peut se connecter à chaque ordinateur via différentes « portes » appelées ports. Chaque service utilise un port différent (page web 80, fichier transfert 21, email 110). Ouvrir une page web et y aura plein de connexions established
 
 
-#### 2. Savoir paramétrer un pare-feu est essentiel : Configurer le parefeu iptables
+### 2. Savoir paramétrer un pare-feu est essentiel : Configurer le parefeu iptables
 
 - Il permet d'établir un certain nombre de règles pour dire par quels ports on peut se connecter à votre ordinateur, mais aussi à quels ports vous avez le droit de vous connecter. Notre objectif est de bloquer par défaut toutes ces portes et d'autoriser seulement celles dont vous avez besoin, que vous considérez comme « sûres » et que vous utilisez. Par exemple, le port 80 utilisé pour le web est un port sûr que vous pouvez activer.
 - Avoir un pare-feu ne vous prémunit pas contre les virus. En revanche, cela rend la tâche particulièrement difficile aux pirates qui voudraient accéder à votre machine.
@@ -189,7 +189,7 @@ Sur mac :
 - [Tryhackme](https://tryhackme.com/paths)
 - [openclassroom](https://openclassrooms.com/fr/courses/857447-apprenez-le-fonctionnement-des-reseaux-tcp-ip/853038-le-materiel-de-couche-2-le-commutateur)
 
-### OSI Model
+## OSI Model
 Le modèle OSI est une norme qui préconise comment les ordinateurs devraient communiquer entre eux. Modèle a 7 couches. Pour communiquer par courrier il faut un émetteur, récepteur, support de transmission (lettre) etc. Les chercheurs ont imaginé 7 éléments a mettre en place pour communiquer sur internet.
 
 - La couche 1 ou **couche physique** :
@@ -227,7 +227,7 @@ Le modèle OSI ajoute deux règles :
 
 L'encapsulation : un message est envoyé depuis la couche 7 du modèle OSI, et il traverse toutes les couches jusqu'à arriver à la couche 1 pour être envoyé sur le réseau. En fait, un en-tête va être ajouté à chaque passage par une couche. Au passage par la couche 4, on ajoutera l'en-tête de couche 4, puis celui de couche 3 en passant par la couche 3, et ainsi de suite. On encapsule un message dans un autre.  ce qui va circuler sur le réseau est une trame de couche 2, qui contient le datagramme de couche 3 (qui lui-même contiendra l'élément de couche 4).
 
-#### 1. Couche 1 et 2 : communiquer dans un réseau local (LAN)
+### 1. Couche 1 et 2 : communiquer dans un réseau local (LAN)
 
 |couche| 1 |
 |------|----|
@@ -250,7 +250,7 @@ L'encapsulation : un message est envoyé depuis la couche 7 du modèle OSI, et i
 
 --> Les adresses IP privees sont differentes entre une VM et mon pc
 
-#### 2. Couche 3 : communiquer entre réseaux
+### 2. Couche 3 : communiquer entre réseaux
 
 Comment envoyer un message à un réseau auquel on est pas directement reliés ? Les réseaux sont tous reliés entre eux, comme une chaîne. Internet est un ensemble de réseaux collés les uns aux autres. Pour voir par quelles machines on passe pour aller jusqu'a une machine :
 ```
@@ -285,7 +285,7 @@ route add -net 192.168.0.0 netmask 255.255.255.0 gw 10.0.0.253 #ajouter une rout
 
 --> Une box Internet est constitué d'un modem ADSL et d'un routeur 
 
-#### 3. Couche 4 : communiquer entre applications
+### 3. Couche 4 : communiquer entre applications
 
 Un serveur = offrir un service. Un serveur web va mettre à disposition des internautes des pages web. Un serveur de messagerie mettra à disposition des adresses mail ainsi qu'un service d'envoi et de réception de mails.
 
@@ -309,10 +309,10 @@ Client = Oui, en ce moment même vous utilisez un client web qui est votre navig
 | protocoles | 2 protocoles : TCP (applications qui nécessitent un transport fiable des données, mais qui n'ont pas de besoin particulier en ce qui concerne la vitesse de transmission par exemple les mails ou le web) et UDP (applications qui nécessitent un transport immédiat des informations, mais qui peuvent se permettre de perdre quelques informations. Par exemple le streaming ou la radio) |
 | nom des messages | datagramme UDP (qui contient: Port Source=addrapplicationqui envoielinfo - Port Destination=addrapplicationquirecoitinfoparexmonnavigateur - Longueur totale - Checksum - Données à envoyer) et le segment TCP (Port Source - Port Destination - Flags - Checksum - Données à envoyer)|
 
-#### 4. Couche 7 : Applications 
+### 4. Couche 7 : Applications 
 Elle est là pour représenter les applications pour lesquelles nous allons mettre en œuvre des communications. Les couches 1 à 4 sont appelées les couches "réseau". Ce sont elles qui ont la responsabilité d'acheminer les informations d'une machine à une autre, pour les applications qui le demandent.
 
-#### 5. protocoles DHCP, DNS, et HTTP
+### 5. protocoles DHCP, DNS, et HTTP
 - Protocole DHCP = Un protocole pour distribuer des adresses IP. La première fonction d'un serveur DHCP est de fournir des adresses IP aux machines en faisant la demande.
 - Protocole DNS = Systeme de nomage pour eviter d'avoir a retenir toutes les adresses ip, se charge de convertir (on parle de résolution) le nom du site web demandé en adresse IP.
 - Protocole HTTP = Le principe du protocole HTTP est de transporter ces pages HTML, et potentiellement quelques informations supplémentaires. Le serveur web met donc à disposition les pages web qu'il héberge, et le protocole HTTP les transporte sur le réseau pour les amener au client.
@@ -323,7 +323,7 @@ Elle est là pour représenter les applications pour lesquelles nous allons mett
 - [Certification CEH v11](https://bookshelf.vitalsource.com/#/books/9781635675337/cfi/112!/4/4@0.00:36.5)
 - [Tryhackme](https://tryhackme.com/paths)
 
-### Attaques
+## Attaques
 
 | Attack| Description | Example|
 |------|----|-------|
@@ -333,7 +333,7 @@ Elle est là pour représenter les applications pour lesquelles nous allons mett
 | Insider Attacks | effectuées par des personnes de confiance qui ont un accès physique aux actifs critiques de la cible. Utiliser un accès privilégié pour enfreindre les règles ou provoquer intentionnellement une menace pour les informations ou les systèmes d'information de l'organisation.| **theft of physical devices** (vol d'appareils physiques) and **planting keyloggers** (enregistreurs de claviers), backdoors, malware, social engineering |
 | Distribution Attacks | Lorsque les attaquants altèrent le matériel ou le logiciel avant l'installation. Par exemple les portes dérobées créées par les fournisseurs de logiciels ou de matériel au moment de la fabrication | modification of software or hardware during production |
 
-### Etapes
+## Etapes
 
 | Etape |description|
 |------|----|
@@ -343,10 +343,10 @@ Elle est là pour représenter les applications pour lesquelles nous allons mett
 |**4**| **Maintaining Access** : Une fois qu'un attaquant a accès au système cible avec des privilèges d'administrateur il peut utiliser à la fois le système et ses ressources à volonté. Les attaquants qui choisissent de ne pas être détectés suppriment les preuves de leur entrée et installent une porte dérobée ou un cheval de Troie pour obtenir un accès répété. Ils peuvent également installer des rootkits au niveau du noyau pour obtenir un accès administratif complet à l'ordinateur cible. Les rootkits accèdent au niveau du système d'exploitation, tandis que les chevaux de Troie accèdent au niveau de l'application. Les rootkits et les chevaux de Troie nécessitent que les utilisateurs les installent localement.|
 |**5**| **Clearing Tracks** : utilisent des utilitaires tels que PsTools, Netcat ou des chevaux de Troie pour effacer leurs empreintes des fichiers journaux du système. D'autres techniques incluent la stéganographie et la tunnellisation. Les administrateurs système peuvent déployer des IDS (systèmes de détection d'intrusion) et un logiciel antivirus basés sur l'hôte afin de détecter les chevaux de Troie et autres fichiers et répertoires apparemment compromis |
 
-### 1. Footprinting and Reconnaissance
-### 2. Scanning Networks
+## 1. Footprinting and Reconnaissance
+## 2. Scanning Networks
 
-####  Ma machine
+###  Ma machine
 
 | ifconfig | Ping | Route |
 |----------|-------|--------|
@@ -375,7 +375,7 @@ si je suis sur VM attention reglages reseau [explication](https://chrtophe.devel
 [CIDR masque de sous-reseau](https://fr.wikipedia.org/wiki/Sous-r%C3%A9seau)
 
 
-####  Scanning
+###  Scanning
 
 | Port Scanning | Network Scanning | Vulnerability Scanning |
 |----------|-------|--------|
@@ -413,7 +413,7 @@ hping3 -A #ACK
 hping -2 #UDP 
 ```
 
-####  Enumeration
+###  Enumeration
 Processus d'extraction des noms d'utilisateur, des noms de machine, des ressources réseau, des partages et des services d'un système ou d'un réseau. Selon les ports ouverts, on va enumerer :
 
 Techniques to extract informations :
@@ -453,7 +453,7 @@ Snmpcheck
 SoftPerfect Network Scanner
 ```
 
-####  Vulnerability Analysis
+###  Vulnerability Analysis
 
 acronyme CVE = désigne une liste publique de failles de sécurité informatique. Lorsque l'on parle d'une CVE, on fait généralement référence à l'identifiant d'une faille de sécurité répertoriée dans cette liste. Les identifiants CVE sont attribués par des autorités déléguées, les CNA (CVE Numbering Authority). Les CNA disposent de blocs d'identifiants CVE alloués par le MITRE, qui sont réservés et attribués aux failles au moment de leur découverte. 
 
@@ -492,8 +492,8 @@ Show exploits #Pour afficher les différents types d’exploits
 ```
 
 
-### 3. System Hacking
-#### Sniffing
+## 3. System Hacking
+### Sniffing
 
 Wireshark est un sniffer. Un sniffer est un programme qui écoute sur le réseau, intercepte toutes les trames reçues par votre carte réseau, et les affiche à l'écran.
 - on peut voir la liste des trames reçues lors d'une requête (couche 1 "Frame 187", la couche 2 "Ethernet", la couche 3 "IP" etc.),
@@ -515,7 +515,7 @@ Tcpdump est un sniffer, comme wireshark, mais en ligne de commande sous linux.
 tcpdump -i eth0 -n port 80 and host *addripquonveutecouter* #on ecoute le port 80 de la machine cible
 ````
 
-#### Hacking Wireless Networks
+### Hacking Wireless Networks
 
 - ARP poisoning using Ettercap, MiTM attack
 ARP poisoning is an attack that is accomplished using the technique of ARP spoofing. 
@@ -547,7 +547,7 @@ echo 1 > /proc/sys/net/ipv4/ip_forward #activer le forwarding des paquets
 ```
 
 
-#### Malware Threats
+### Malware Threats
 
 
 - msfvenom = composant majeur de Metasploit qui vous permet de générer des payloads, exécutables, shellcodes, apk pour les utiliser dans vos exploitations. Cependant, ces shellcodes créés ne sont pas si effaces que ça en a l’air. Ils contiennent de mauvais caractères ce qui fait qu’un antivirus stupide peut les attraper facilement, c’est pourquoi vous aurez besoin d’une autre fonctionnalité de msfvenom qui est l’encodage, ce dernier permet d’éviter ces mauvais caractères.  le meilleur classement est celui de l’encodeur x86/shikata_ga_nai
@@ -621,10 +621,10 @@ Payloads connus parce que classiques sur metasploit. --> Encrypting Better Than 
 [Video tuto Create Undetectable Payloads for macOS Computers with Tokyoneon's Armor](https://www.youtube.com/watch?v=qgroUbiuNTU&t=1s)
 
 
-#### Denial-of-Service, Session Hijacking, SQL injection ..
+### Denial-of-Service, Session Hijacking, SQL injection ..
 
 # IV - Hack the Box
-### Installation
+## Installation
 Se connecter au VPN [tuto](https://www.youtube.com/watch?v=msCWpKegNlc)
 
 ```
@@ -633,7 +633,7 @@ sudo openvpn --config /path/to/file.ovpn
 # initialization sequence completed = OK
 ```
 
-### Methodo
+## Methodo
 
 ```
 ######sur mon reseau######
