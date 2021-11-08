@@ -1,4 +1,3 @@
-color.red("resr")
 ## plan
 ### I - Linux Fundamentals
 - Les utilisateurs et les droits
