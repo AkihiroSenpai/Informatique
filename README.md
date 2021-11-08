@@ -8,7 +8,7 @@
   <h3 align="center">Aide-Mémoire</h3>
 </div>
 
-##
+---
 ### I - Linux Fundamentals
 - Les utilisateurs et les droits
 - Installer des programmes avec apt-get
